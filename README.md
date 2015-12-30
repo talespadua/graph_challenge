@@ -1,6 +1,7 @@
 ### Webservice for finding best route on a logistic mesh
 
-##### The objective of this webservice is to load a logistic mesh and then return to the user the most cost-efficient path between two nodes of the mesh.
+###### The objective of this webservice is to load a logistic mesh and then return to the user the most cost-efficient path between two nodes of the mesh.
+###### To find the best path, I use the Dijkstra's algorithm from the networkx library. The Dijkstra's algorithm is used to finding the shortest paths between nodes in a graph. This algorithm is the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
 
 ### Technologies used:
 #### Language:
@@ -12,7 +13,7 @@
    Flask is a microframework for web development. It was chosen because it's very quick to make a webservice using it, requiring only a single file and a single route
 * ##### Networkx
 
-   NetworkX is a Python language software package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks. It is used to generate graphs from the mesh points and to find the optimal path using Dijkstra's algorithm
+   NetworkX is a Python language software package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks. It is used to generate graphs from the mesh points and to find the optimal path using Dijkstra's algorithm.
 
 * ##### json
 
