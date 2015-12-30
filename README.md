@@ -22,7 +22,7 @@
 #### Data persistence:
 * ##### JSON
 
-  Initially my plan was to use MongoDB and the pymongo driver to store the logistic mesh data, but this would require testers to install MongoDB and populate the database from a json file. Besides that no data is being modified, so a database is not really required. I decided then to load data from a JSON file directly because that way very little code change will be needed in case I decide to use MongoDB, and because with JSON I can easily represent complex object structures and parse it with python.
+  Initially my plan was to use MongoDB and the pymongo driver to store the logistic mesh data, but this would require testers to install MongoDB and populate the database from a json file. Besides that no data is being modified, so a database is not really required. I decided then to load data from a JSON file directly because that way very little code change will be needed in case I decide to use MongoDB and because with JSON I can easily represent complex object structures and parse it with python.
 
 #### Communication:
 
