@@ -1,7 +1,7 @@
 ### Webservice for finding best route on a logistic mesh
 
 ###### The objective of this webservice is to load a logistic mesh and then return to the user the most cost-efficient path between two nodes of the mesh.
-###### To find the best path, I use the Dijkstra's algorithm from the networkx library. The Dijkstra's algorithm is used to finding the shortest paths between nodes in a graph. This algorithm is the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
+###### To find the best path, I use the Dijkstra's algorithm from the networkx library. The Dijkstra's algorithm is used to find the shortest paths between nodes in a graph. This algorithm is the fastest known single-source shortest-path algorithm for arbitrary directed graphs with unbounded non-negative weights.
 
 ### Technologies used:
 #### Language:
@@ -26,7 +26,7 @@
 
 #### Communication:
 
-   The client call a get_best_route method via HTTP GET method, and the server returns the information in JSON format. JSON was chosen because it is a format that can be parsed easily with all popular languages, so this example can get scale.  
+   The client call a get_best_route method via HTTP GET method, and the server returns the information in JSON format. JSON was chosen because it is a format that can be parsed easily with all popular languages, so this example can be scaled.  
 
 ### Installation:
 
