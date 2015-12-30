@@ -6,6 +6,7 @@ import json
 # class
 def calculate_cost(distance, autonomy, litre_value):
     cost = (distance/autonomy) * litre_value
+    return cost
 
 
 def get_best_way(origin, destiny):
@@ -20,20 +21,33 @@ with open('maps.json') as json_file:
 
 
 for points in map[0]['routes']:
-    print points
     G.add_edge(points['origin'], points['destiny'], weight=float(points['distance']))
 
-print nx.dijkstra_path(G, 'A', 'D')
+optimal_path = nx.dijkstra_path(G, 'A', 'D')
+optimal_path_lenght = nx.dijkstra_path_length(G, 'A', 'D')
 
+print optimal_path, optimal_path_lenght
 
 @app.route('/get_best_route')
 def index():
     map = request.args.get('map')
     origin = request.args.get('origin')
     destiny = request.args.get('destiny')
-    autonomy = request.args.get('autonomy')
-    litre_value = request.args.get('litre_value')
-    print map, origin, destiny, autonomy, litre_value
+    autonomy = float(request.args.get('autonomy'))
+    litre_value = float(request.args.get('litre_value'))
+
+    optimal_path = nx.dijkstra_path(G, origin, destiny)
+    optimal_path_lenght = nx.dijkstra_path_length(G, origin, destiny)
+
+    cost = calculate_cost(optimal_path_lenght, autonomy, litre_value)
+
+    data = {}
+    data['path'] = optimal_path
+    data['cost'] = cost
+
+    json_response = json.dumps(data)
+
+    return json_response
 
 
 app.run(debug=True)
