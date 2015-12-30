@@ -33,5 +33,75 @@
         "distance": 30
       }
     ]
+  },
+  {
+    "map_name": "RJ",
+    "routes": [
+      {
+        "origin": "A",
+        "destiny": "C",
+        "distance": 30
+      },
+      {
+        "origin": "A",
+        "destiny": "D",
+        "distance": 5
+      },
+      {
+        "origin": "B",
+        "destiny": "C",
+        "distance": 20
+      },
+      {
+        "origin": "C",
+        "destiny": "D",
+        "distance": 15
+      },
+      {
+        "origin": "B",
+        "destiny": "E",
+        "distance": 70
+      },
+      {
+        "origin": "D",
+        "destiny": "E",
+        "distance": 22
+      }
+    ]
+  },
+  {
+    "map_name": "RS",
+    "routes": [
+      {
+        "origin": "A",
+        "destiny": "E",
+        "distance": 10
+      },
+      {
+        "origin": "B",
+        "destiny": "C",
+        "distance": 15
+      },
+      {
+        "origin": "B",
+        "destiny": "C",
+        "distance": 20
+      },
+      {
+        "origin": "E",
+        "destiny": "D",
+        "distance": 30
+      },
+      {
+        "origin": "B",
+        "destiny": "E",
+        "distance": 40
+      },
+      {
+        "origin": "D",
+        "destiny": "E",
+        "distance": 30
+      }
+    ]
   }
 ]
