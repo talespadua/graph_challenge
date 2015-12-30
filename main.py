@@ -3,7 +3,7 @@ import networkx as nx
 import json
 
 
-# Mesh objects stores the name of the logistic mesh
+# Mesh objects stores the name of the logistic mesh and the graph of the mesh
 class Mesh:
     def __init__(self, name):
         self.name = name
@@ -34,7 +34,7 @@ logistic_meshs = []
 with open('maps.json') as json_file:
     map_list = json.load(json_file)
 
-# Load a Graph for each
+# Load a Graph for each map
 for map in map_list:
     mesh = Mesh(map['map_name'])
     graph = nx.Graph()
@@ -46,6 +46,7 @@ for map in map_list:
 
 @app.route('/get_best_route')
 def index():
+    # Getting the parameters from url
     map_name = request.args.get('map_name')
     origin = request.args.get('origin')
     destiny = request.args.get('destiny')
@@ -67,18 +68,21 @@ def index():
     if float(autonomy) < 0 or float(litre_value) < 0:
         return "Autonomy and litre value must be positive numbers"
 
+    # Apply dijkstra algorithm to find the best path
     optimal_path = nx.dijkstra_path(graph, origin, destiny)
-    optimal_path_lenght = nx.dijkstra_path_length(graph, origin, destiny)
+    # Get the length of the path
+    optimal_path_length = nx.dijkstra_path_length(graph, origin, destiny)
 
-    cost = calculate_cost(optimal_path_lenght, float(autonomy), float(litre_value))
+    # calculate the cost
+    cost = calculate_cost(optimal_path_length, float(autonomy), float(litre_value))
 
+    # Build the response JSON
     data = dict()
     data['path'] = optimal_path
     data['cost'] = cost
-
     json_response = json.dumps(data)
 
     return json_response
 
-
+# Run the application
 app.run(debug=True)
