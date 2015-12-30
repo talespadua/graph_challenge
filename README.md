@@ -25,9 +25,9 @@
 
 #### Communication:
 
-   The client call a get_best_route method via HTTP GET method, and the server returns the information in JSON format. JSON was chosen because it is a format that can be parsed easily with all popular languages, so this example can get scale.
+   The client call a get_best_route method via HTTP GET method, and the server returns the information in JSON format. JSON was chosen because it is a format that can be parsed easily with all popular languages, so this example can get scale.  
 
- ### Installation:
+### Installation:
 
    To install the packages needed with pip, go to the project folder and type:  
     `pip install -r requirements.txt`
@@ -35,4 +35,4 @@
 ### Running:
 
   To run the webserver, run the script with `python main.py`.  
-  The application will run on localhost, with port 5000 
+  The application will run on localhost, with port 5000
